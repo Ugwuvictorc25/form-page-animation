@@ -1,0 +1,673 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+}
+
+.content-div {
+	width: 80%;
+	height: 100%;
+	background-color: gainsboro;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	width: 90%;
+	height: 90%;
+	background-color: white;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	padding: 40px 10px 10px;
+}
+
+.content-head {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgb(235, 234, 234);
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon-container {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 10px;
+}
+
+.traingle {
+	text-align: center;
+	font-size: 30px;
+	line-height: 1.2;
+	background-color: aquamarine;
+	width: 4rem;
+	height: 2rem;
+	transform: scale(0);
+	transition-delay: 0.5s;
+	transition: all 0.3s;
+	transition-delay: 0.5s;
+}
+
+.styled-icon {
+	color: gray; /* Change icon color */
+	font-size: 20px; /* Change icon size */
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow */
+	transition: transform 0.3s; /* Smooth transition for hover effect */
+	transition: all 0.3s;
+	transform: scale(0);
+	transition-delay: 0.5s;
+}
+
+.icon-container .dot {
+	height: 7px;
+	width: 7px;
+	border-radius: 7px;
+	margin: 0 0.2rem;
+}
+
+.icon-pad {
+	color: gainsboro;
+}
+
+.red {
+	background-color: red;
+}
+.blue {
+	background-color: blue;
+}
+.yellow {
+	background-color: yellow;
+}
+
+.content-head .title {
+	font-size: x-small;
+	background-color: rgb(246, 246, 246);
+	padding: 0.09rem;
+	width: 50%;
+	border-radius: 2px;
+	color: grey;
+	text-align: center;
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+	display: flex;
+	position: relative;
+}
+
+.main .logo {
+	position: absolute;
+	z-index: 100;
+	background-color: white;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	transform: scale(0);
+	transition: all 0.5s;
+}
+
+.main .logo.unload,
+.main .logo.unload .styled-icon {
+	transform: scale(1);
+}
+
+.main .logo.unload.rotate {
+	transform: rotate(30deg);
+	transition: all 0.5s;
+}
+
+.main .logo.unload.rotate.fly {
+	top: 0;
+	left: 0;
+	transform: rotate(0);
+}
+
+.main .logo.unload.rotate.fly.antirotate {
+	transform: rotate(-530deg);
+	transition: all 0.8s;
+}
+
+.main .logo.unload.rotate.antirotate.end {
+	transform: rotate(0);
+}
+
+.main .logo.unload.rotate.antirotate.end.bounce {
+	animation: bounce 0.5s forwards;
+	animation-delay: 0.5s;
+}
+
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+.form-section {
+	padding-top: 1rem;
+	width: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: all 0.3s;
+}
+
+.main.divide-width .form-section.half {
+	display: block;
+	opacity: 1;
+	width: 50%;
+}
+
+.form-section-head {
+	display: flex;
+	height: 40px;
+	justify-content: space-between;
+	width: 91%;
+	margin-left: auto;
+	margin-top: -1rem;
+	padding-right: 1rem;
+}
+.region-mortage-div {
+	overflow: hidden;
+}
+
+.region-mortage {
+	height: 40px;
+	margin-left: 0.6rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+	margin: 0.1rem;
+	transform: translate(-100%);
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	transition: all 0.5s;
+	transition-delay: 0.3s;
+	overflow: hidden;
+}
+
+.form-section.half .region-mortage {
+	transform: translate(0);
+	transition: all 0.8s;
+}
+
+.form-section.half .region-mortage.hide {
+	transform: translate(-120%);
+}
+
+.region-mortage .region {
+	font-size: 0.7rem;
+	margin: 0;
+	font-weight: 800;
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.region-mortage .mortage {
+	font-size: 0.5rem;
+	font-weight: 600;
+}
+
+.header-btn-cont {
+	align-self: center;
+	display: flex;
+	transition: all 0.5s;
+}
+
+.header-btn-cont.fade {
+	transform: translateY(100%);
+	opacity: 0;
+}
+
+.header-btn-cont button {
+	font-size: 0.6rem;
+	font-weight: 600;
+}
+
+.custmer-btn-div {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.header-btn-cont .customer {
+	border: none;
+	font-weight: 400;
+	color: gray;
+	background-color: transparent;
+	cursor: pointer;
+	transform: translate(10000%);
+	/* visibility: hidden; */
+	transition: all 2s;
+}
+
+.form-section.half .customer {
+	transform: translate(0);
+}
+
+.enroll-btn-div {
+	position: relative; /* Position relative to the parent */
+	display: inline-block; /* Inline block for proper spacing */
+	cursor: pointer; /* Change cursor to pointer */
+}
+
+.header-btn-cont .enroll {
+	padding: 0.3rem 0.5rem;
+	background-color: transparent;
+	border: solid rgb(179, 179, 179) 1px;
+	border-radius: 10px;
+	margin-left: 1rem;
+	cursor: pointer;
+	color: rgb(102, 101, 101);
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	transform: translate(10000%);
+	visibility: hidden;
+	transition: all 1.2s;
+}
+
+.enroll-btn-div:hover .tooltip-text {
+	visibility: visible; /* Show tooltip */
+	opacity: 1; /* Make it visible */
+}
+
+.header-btn-cont .enroll {
+	visibility: visible; /* Show tooltip */
+	opacity: 1; /* Make it visible */
+}
+
+.enroll-btn-div .tooltip-text {
+	visibility: hidden; /* Hidden by default */
+	width: max-content; /* Width of the tooltip */
+	background-color: black; /* Background color */
+	color: #fff; /* Text color */
+	text-align: center; /* Center text */
+	border-radius: 5px; /* Rounded corners */
+	padding: 10px 18px; /* Padding */
+	position: absolute; /* Position absolute */
+	z-index: 1; /* Ensure it appears above other elements */
+	bottom: -400%; /* Position above the tooltip */
+	left: -25%; /* Center horizontally */
+	margin-left: -60px; /* Adjust to center */
+	opacity: 0; /* Start as invisible */
+	transition: opacity 1s; /* Fade in effect */
+	font-size: 0.6rem;
+}
+
+.enroll-btn-div .tooltip-text .tooltip-text-head {
+	text-align: start;
+	margin-bottom: 0.2rem;
+}
+
+.enroll-btn-div .tooltip-text .tooltip-text-body {
+	font-size: 0.6rem;
+}
+
+.enroll-btn-div .tooltip-text .tooltip-text-body span {
+	margin-right: 0.5rem;
+}
+
+.enroll-btn-div .tooltip-text .tooltip-text-body p {
+	text-align: start;
+	margin: 0.1rem 0;
+}
+
+.tooltip-text::before {
+	content: ""; /* Required for pseudo-element */
+	position: absolute; /* Position absolute */
+	bottom: 100%; /* Position below the tooltip */
+	left: 55%; /* Center horizontally */
+	margin-left: 18px; /* Adjust to center */
+	border-width: 5px; /* Size of the triangle */
+	border-style: solid; /* Solid border */
+	border-color: black transparent transparent transparent; /* Triangle color */
+	transform: rotate(180deg);
+}
+
+.form-section.half .enroll {
+	transform: translate(0);
+	opacity: 1;
+	visibility: visible;
+}
+
+.hero-section {
+	background-image: url("assets/pexels-photo-106399.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	object-fit: cover;
+	background-position: center;
+	border-radius: 10px;
+	transform: scale(0);
+	transition: all 0.4s;
+}
+
+.hero-section.unload {
+	transform: scale(1);
+	width: 100%;
+	height: 100%;
+	transition: all linear 0.9s;
+}
+
+.main.divide-width .hero-section {
+	width: 50%;
+	margin-left: auto;
+}
+
+.form-cont {
+	text-align: center;
+	padding-top: 2rem;
+	opacity: 0;
+	transition: all 0.5s;
+}
+
+.form-cont.show {
+	opacity: 1;
+}
+
+.form-header {
+	transform: translateY(100%);
+	transition: all 0.5s;
+}
+
+.form-cont.show .form-header {
+	transform: translateY(0);
+}
+
+.form-cont h2 {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.form-cont .SignIn {
+	font-size: 0.6rem;
+	color: gray;
+	transition: all 0.5s;
+}
+
+.form {
+	transform: translateY(100%);
+	transition: all 2s;
+}
+
+.form-cont.show .form {
+	transform: translateY(0);
+	transition: all 0.5s;
+}
+
+.form-cont.remove {
+	transform: translateY(20%);
+	opacity: 1;
+}
+
+.form-cont .input-cont {
+	margin-top: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-cont .input-cont .input-div {
+	width: 80%;
+	position: relative;
+	margin: 0.4rem 0;
+	border-radius: 10px;
+}
+
+.form-cont .input-cont .input-div:focus {
+	background-color: aqua;
+}
+
+.form-cont .input-cont .input-div span {
+	position: absolute;
+	color: rgb(99, 98, 98);
+	left: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 0.8rem;
+	transition: all 0.6s;
+	display: inline-block;
+}
+
+.form-cont .input-cont .input-div input {
+	padding: 1rem 0.8rem 0.4rem;
+	width: 100%;
+	vertical-align: bottom;
+	font-size: 0.8rem;
+	border-radius: 10px;
+	border: solid 1px gainsboro;
+}
+
+.form-cont .input-cont input:focus {
+	border: solid rgb(186, 185, 185) 1px;
+	outline: none;
+}
+
+.form-cont .input-div.shift-up span {
+	top: 25%;
+	font-size: 0.6rem;
+	font-weight: 800;
+}
+
+span.show-password {
+	display: none !important;
+}
+
+.input-div.shift-up span.show-password {
+	display: inline-block !important;
+	left: 80%;
+	font-size: 0.8rem;
+	top: 50%;
+	font-weight: 500;
+}
+
+.form-cont .checkbox-cont {
+	margin-top: 0.5rem;
+	display: flex;
+	justify-content: flex-start;
+	width: 80%;
+}
+
+.form-cont .checkbox-cont span {
+	font-size: 0.8rem;
+	color: gray;
+	margin-top: 0.2rem;
+}
+
+.custom-checkbox {
+	display: none; /* Hide the default checkbox */
+}
+
+.custom-checkbox-label {
+	display: inline-block;
+	width: 18px; /* Width of the custom checkbox */
+	height: 18px; /* Height of the custom checkbox */
+	border: 2px solid gray; /* Border color */
+	border-radius: 4px; /* Rounded corners */
+	position: relative; /* Position for the pseudo-element */
+	cursor: pointer; /* Change cursor to pointer */
+	margin-right: 8px; /* Space between checkbox and label text */
+}
+
+.custom-checkbox:checked + .custom-checkbox-label {
+	background-color: transparent; /* Remove background color */
+	border-color: 2c2b2b; /* Remove border color */
+}
+
+.custom-checkbox:checked + .custom-checkbox-label::after {
+	content: ""; /* Required for pseudo-element */
+	position: absolute; /* Position absolute */
+	left: 6px; /* Position checkmark */
+	top: -3px; /* Position checkmark */
+	width: 4px; /* Width of checkmark */
+	height: 15px; /* Height of checkmark */
+	border: solid gray; /* Checkmark color */
+	border-width: 0 2px 2px 0; /* Create checkmark shape */
+	transform: rotate(45deg); /* Rotate to form a checkmark */
+}
+
+.btn-login-div {
+	text-align: center;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-btn {
+	width: 80%;
+	padding: 0.4rem;
+	margin: 1.5rem 0;
+	font-weight: 400;
+	color: #fff;
+	background-color: black;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0.5rem auto;
+	transition: all 0.3s;
+	text-align: center;
+}
+
+.login-btn .login {
+	transition-delay: 0.3s;
+	transition: all 2s;
+	display: block;
+}
+
+.login-btn .loading {
+	width: 15px;
+	display: flex;
+	justify-content: center;
+	height: 15px;
+	border-radius: 50%;
+	border: white solid 2px;
+	position: relative;
+	left: -100%;
+	animation: rotate 0.4s infinite;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(90deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.login-btn .loading::after {
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	border-bottom: solid 2px gray;
+	border-radius: 50%;
+	/* display: block; */
+	position: absolute;
+}
+
+.login-btn.tiggle {
+	animation: tiggle 0.2s;
+	position: relative;
+}
+
+.login-btn.tiggle .login {
+	transform: translateX(1000%);
+}
+
+@keyframes tiggle {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(0.9);
+	}
+
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.login-btn:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+}
+
+.login-btn.tiggle .loading {
+	position: absolute;
+	left: 48%;
+	transition: all 0.6s;
+}
+
+.forgot-div {
+	font-size: 0.6rem;
+	color: rgb(94, 93, 93);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.2rem;
+	font-weight: 600;
+}
+
+.forgot-div span.dot {
+	transform: translateY(-3px);
+}
+
+footer.footer {
+	font-size: 0.5rem;
+	color: gray;
+	margin-top: 3.3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+footer.footer .icon {
+	margin-right: 1rem;
+}
+
+footer.footer .b1 {
+	margin-left: 1.5rem;
+}
